@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include 'php/header.php';
 
 if (!isset($_SESSION['username'])) {
@@ -10,68 +10,125 @@ include 'php/proses.php';
 $proses = new Proses();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Two Page</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
-    <nav class="nav flex-column ">
-        <div class="navbar navbar-dark bg-dark d-flex justify-content-center align-items-center text-white p-2 mb-3 mt-1 rounded shadow text-center">
-            <a class="text-white nav-link" href="index.php">Home</a>
-            <a class="nav-link text-white" href="create.php">Tambah</a>
-            <a class="nav-link text-white" href="logout.php">Logout</a>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="container">
-            <h1 class="text-center">Selamat Datang</h1>
-            <div class="table-responsive mt-5 mb-5 align-items-center d-flex justify-content-center">
-                <table class="table table-bordered table-striped">
-                    <thead class="table-dark text-center">
-                        <tr>
-                            <th>No.</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>No. Telp</th>
-                            <th>NIK</th>
-                            <th>Pekerjaan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <?php
-                        $no = 1;
-                        foreach ($proses->tampil_data() as $data) {
-                        ?>
-                            <tr>
-                                <td><?= $no++ ?></td>
-                                <td><?= $data['nama'] ?></td>
-                                <td><?= $data['email'] ?></td>
-                                <td><?= $data['no_tlp'] ?></td>
-                                <td><?= $data['nik'] ?></td>
-                                <td><?= $data['pekerjaan'] ?></td>
-                                <td>
-                                    <a href="edit.php?id=<?= $data['id'] ?>" class="btn btn-warning">Edit</a>
-                                    <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-info">Detail</a>
-                                    <a href="delete.php?id=<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;TWO PAGE</a>
+                </div>
             </div>
         </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center user-image-back">
+                        <img src="assets/img/find_user.png" class="img-responsive" />
+
+                    </li>
+
+
+                    <li>
+                        <a href="index.php"><i class="fa fa-desktop "></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="create.php"><i class="fa fa-table "></i>Tambah</a>
+                    </li>
+                    <li>
+                        <a href="logout.php"><i class="fa fa-sign-out "></i>Keluar</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Admin Dashboard</h2>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr />
+                <div class="row m-3">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>No. Telp</th>
+                                <th>NIK</th>
+                                <th>Pekerjaan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <?php
+                            $no = 1;
+                            foreach ($proses->tampil_data() as $data) {
+                            ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $data['nama'] ?></td>
+                                    <td><?= $data['email'] ?></td>
+                                    <td><?= $data['no_tlp'] ?></td>
+                                    <td><?= $data['nik'] ?></td>
+                                    <td><?= $data['pekerjaan'] ?></td>
+                                    <td>
+                                        <a href="edit.php?id=<?= $data['id'] ?>" class="btn btn-warning">Edit</a>
+                                        <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-info">Detail</a>
+                                        <a href="delete.php?id=<?= $data['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /. PAGE INNER  -->
     </div>
+    <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
 </html>
