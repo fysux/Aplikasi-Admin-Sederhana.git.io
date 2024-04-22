@@ -15,7 +15,7 @@ $proses = new Proses();
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template : Two Page</title>
+    <title>Perumahan Kita</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -36,7 +36,7 @@ $proses = new Proses();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;TWO PAGE</a>
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;Admin</a>
                 </div>
             </div>
         </div>

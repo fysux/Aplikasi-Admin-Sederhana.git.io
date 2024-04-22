@@ -46,8 +46,22 @@ if (isset($_POST['create'])) {
                     <input type="text" name="nik" placeholder="NIK" class="form-control">
                 </div>
                 <label for="" class="form-label opacity-50">Pekerjaan</label>
-                <div class="mb-3 d-flex justify-content-center align-items-center">
-                    <input type="text" name="pekerjaan" placeholder="Pekerjaan" class="form-control">
+                <div class="mb-3 ">
+                    <ul class="list-group">
+                        <li class="form-check">
+                            <input type="checkbox" name="pekerjaan" placeholder="Pekerjaan" value="Pegawai" class="form-check-input">
+                            <label for="" class="form-check-label">Pegawai</label>
+                        </li>
+                        <li class="form-check">
+                            <input type="checkbox" name="pekerjaan" placeholder="Pekerjaan" value="Pensiunan" class="form-check-input">
+                            <label for="" class="form-check-label">Pensiunan</label>
+                        </li>
+                        <li class="form-check">
+                            <input type="checkbox" name="pekerjaan" placeholder="Pekerjaan" value="Wiraswasta" class="form-check-input">
+                            <label for="" class="form-check-label">Wiraswasta</label>
+                        </li>
+                    </ul>
+
                 </div>
                 <div class="mb-3 d-flex justify-content-center align-items-center">
                     <input type="submit" name="create" value="Tambah Data" class="btn btn-primary">
